@@ -17,7 +17,7 @@ class ResumeAnalysis(APIView):
             # resumeAnalyser.process_resume(userid, companyid)
             response = {
                 'id': userid,
-                'name': "Resume Analysis Started",
+                'status': "Resume Analysis Started",
             }
 
             return JsonResponse(response, status=status.HTTP_200_OK)
