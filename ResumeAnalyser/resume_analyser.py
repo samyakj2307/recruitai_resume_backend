@@ -77,8 +77,8 @@ def process_resume(userid, companyid):
 
     resume_score = ResumeAnalyzer(resume_path, job_desc_path)
 
-    db.child("Jobs").child(companyid).child("Juser").child("0").child("resume_score").set(resume_score)
-    db.child("Jobs").child(companyid).child("Juser").child("0").child("status").set("Resume Processed")
+    db.child("Jobs").child(companyid).child("Juser").child(userid).child("resume_score").set(resume_score)
+    db.child("Jobs").child(companyid).child("Juser").child(userid).child("status").set("Resume Processed")
 
     clean_directory_resume()
     logger.info("Resume Processed")
